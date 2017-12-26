@@ -1,0 +1,6 @@
+cmake_minimum_required (VERSION 2.6)
+project (caps2key)
+add_executable (caps2key caps2key.c)
+include_directories ("/usr/include/libevdev-1.0")
+target_link_libraries (caps2key udev evdev)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
