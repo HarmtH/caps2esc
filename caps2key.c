@@ -27,6 +27,9 @@ a_repeat         = {.type = EV_KEY, .code = KEY_A,         .value = 2},
 b_up             = {.type = EV_KEY, .code = KEY_B,         .value = 0},
 b_down           = {.type = EV_KEY, .code = KEY_B,         .value = 1},
 b_repeat         = {.type = EV_KEY, .code = KEY_B,         .value = 2},
+c_up             = {.type = EV_KEY, .code = KEY_C,         .value = 0},
+c_down           = {.type = EV_KEY, .code = KEY_C,         .value = 1},
+c_repeat         = {.type = EV_KEY, .code = KEY_C,         .value = 2},
 d_up             = {.type = EV_KEY, .code = KEY_D,         .value = 0},
 d_down           = {.type = EV_KEY, .code = KEY_D,         .value = 1},
 d_repeat         = {.type = EV_KEY, .code = KEY_D,         .value = 2},
@@ -72,6 +75,12 @@ v_repeat         = {.type = EV_KEY, .code = KEY_V,         .value = 2},
 w_up             = {.type = EV_KEY, .code = KEY_W,         .value = 0},
 w_down           = {.type = EV_KEY, .code = KEY_W,         .value = 1},
 w_repeat         = {.type = EV_KEY, .code = KEY_W,         .value = 2},
+y_up             = {.type = EV_KEY, .code = KEY_Y,         .value = 0},
+y_down           = {.type = EV_KEY, .code = KEY_Y,         .value = 1},
+y_repeat         = {.type = EV_KEY, .code = KEY_Y,         .value = 2},
+z_up             = {.type = EV_KEY, .code = KEY_Z,         .value = 0},
+z_down           = {.type = EV_KEY, .code = KEY_Z,         .value = 1},
+z_repeat         = {.type = EV_KEY, .code = KEY_Z,         .value = 2},
 backspace_up     = {.type = EV_KEY, .code = KEY_BACKSPACE, .value = 0},
 backspace_down   = {.type = EV_KEY, .code = KEY_BACKSPACE, .value = 1},
 capslock_up      = {.type = EV_KEY, .code = KEY_CAPSLOCK,  .value = 0},
@@ -112,6 +121,9 @@ right_down       = {.type = EV_KEY, .code = KEY_RIGHT,     .value = 1},
 semicolon_up     = {.type = EV_KEY, .code = KEY_SEMICOLON, .value = 0},
 semicolon_down   = {.type = EV_KEY, .code = KEY_SEMICOLON, .value = 1},
 semicolon_repeat = {.type = EV_KEY, .code = KEY_SEMICOLON, .value = 2},
+slash_up         = {.type = EV_KEY, .code = KEY_SLASH,     .value = 0},
+slash_down       = {.type = EV_KEY, .code = KEY_SLASH,     .value = 1},
+slash_repeat     = {.type = EV_KEY, .code = KEY_SLASH,     .value = 2},
 space_up         = {.type = EV_KEY, .code = KEY_SPACE,     .value = 0},
 space_down       = {.type = EV_KEY, .code = KEY_SPACE,     .value = 1},
 tab_up           = {.type = EV_KEY, .code = KEY_TAB,       .value = 0},
@@ -280,7 +292,7 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
             output[k++] = backspace_down;
             output[k++] = backspace_up;
             output[k++] = lctrl_up;
-        } else if (s->semicol && s->alt && (equal(input, &v_down) || equal(input, &v_repeat))) {
+        } else if (s->semicol && (equal(input, &v_down) || equal(input, &v_repeat))) {
             output[k++] = lshift_down;
             output[k++] = lctrl_down;
             output[k++] = v_down;
@@ -293,6 +305,13 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
         } else if (s->semicol && (equal(input, &b_down) || equal(input, &b_repeat))) {
             output[k++] = left_down;
             output[k++] = left_up;
+        } else if (s->semicol && (equal(input, &c_down) || equal(input, &c_repeat))) {
+            output[k++] = lshift_down;
+            output[k++] = lctrl_down;
+            output[k++] = c_down;
+            output[k++] = c_up;
+            output[k++] = lctrl_up;
+            output[k++] = lshift_up;
         } else if (s->semicol && (equal(input, &d_down) || equal(input, &d_repeat))) {
             output[k++] = delete_down;
             output[k++] = delete_up;
@@ -340,7 +359,7 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
             output[k++] = delete_up;
             output[k++] = home_up;
             output[k++] = lshift_up;
-        } else if (s->semicol && (equal(input, &v_down) || equal(input, &v_repeat))) {
+        } else if (s->semicol && (equal(input, &y_down) || equal(input, &y_repeat))) {
             output[k++] = lshift_down;
             output[k++] = insert_down;
             output[k++] = insert_up;
@@ -349,6 +368,16 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
             output[k++] = lctrl_down;
             output[k++] = backspace_down;
             output[k++] = backspace_up;
+            output[k++] = lctrl_up;
+        } else if (s->semicol && (equal(input, &slash_down) || equal(input, &slash_repeat))) {
+            output[k++] = lctrl_down;
+            output[k++] = z_down;
+            output[k++] = z_up;
+            output[k++] = lctrl_up;
+        } else if (s->semicol && (equal(input, &z_down) || equal(input, &z_repeat))) {
+            output[k++] = lctrl_down;
+            output[k++] = z_down;
+            output[k++] = z_up;
             output[k++] = lctrl_up;
         } else if (input->value == 2) {
             output[k++] = *input;
@@ -412,10 +441,14 @@ int eventmap_loop(const char *devnode) {
             break;
 
         struct input_event output[8];
-        for (int i = 0, k = eventmap(&input, output, &state); i < k; ++i)
+        for (int i = 0, k = eventmap(&input, output, &state); i < k; ++i) {
             if (libevdev_uinput_write_event(udev, output[i].type, output[i].code,
                     output[i].value) < 0)
                 goto teardown_udev;
+            if (libevdev_uinput_write_event(udev, EV_SYN, SYN_REPORT, 0) < 0)
+                goto teardown_udev;
+            /* usleep(1200); */
+        }
     }
 
     result = 1;
