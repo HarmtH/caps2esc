@@ -217,7 +217,7 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
                 output[k++] = semicolon_up;
                 presskey = 0;
                 s->semicol = S_WAIT;
-            } else if (equal(input, &space_down)) {
+            } else if (equal(input, &space_down) || equal(input, &capslock_down)) {
                 output[k++] = semicolon_down;
                 dadd(s, semicolon_down.code);
                 s->semicol = S_WAIT;
@@ -379,13 +379,15 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
             output[k++] = z_down;
             output[k++] = z_up;
             output[k++] = lctrl_up;
-        } else if (input->value == 2) {
+        } else if (input->value == 2 && in_array(s, input->code)) {
             output[k++] = *input;
             /* printf("repeat pressing %d\n",input->code); */
         } else if (input->value == 1) {
-            output[k++] = *input;
-            /* printf("pressing %d\n",input->code); */
-            dadd(s, input->code);
+            if (!s->semicol) {
+                output[k++] = *input;
+                dadd(s, input->code);
+                /* printf("pressing %d\n",input->code); */
+            }
         } else if (input->value == 0 && in_array(s, input->code)) {
             output[k++] = *input;
             dremove(s, input->code);
