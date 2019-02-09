@@ -212,12 +212,7 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
             }
             break;
         case S_MAYBE:
-            if (equal(input, &semicolon_up)) {
-                output[k++] = semicolon_down;
-                output[k++] = semicolon_up;
-                presskey = 0;
-                s->semicol = S_WAIT;
-            } else if (equal(input, &space_down) || equal(input, &capslock_down)) {
+            if (equal(input, &semicolon_up) || equal(input, &space_down) || equal(input, &capslock_down)) {
                 output[k++] = semicolon_down;
                 dadd(s, semicolon_down.code);
                 s->semicol = S_WAIT;
@@ -236,30 +231,14 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
     switch (s->alt) {
         case A_WAIT:
             if (equal(input, &lalt_down)) {
-                presskey = 0;
                 switch (s->semicol) {
                     case S_WAIT:
                     case S_MAYBE:
-                        s->alt = A_MAYBE;
                         break;
                     case S_EMACS:
                         s->alt = A_EMACS;
                         break;
                 }
-            }
-            break;
-        case A_MAYBE:
-            switch (s->semicol) {
-                case S_WAIT:
-                    output[k++] = lalt_down;
-                    dadd(s, lalt_down.code);
-                    s->alt = A_WAIT;
-                    break;
-                case S_MAYBE:
-                    break;
-                case S_EMACS:
-                    s->alt = A_EMACS;
-                    break;
             }
             break;
         case A_EMACS:
