@@ -237,6 +237,7 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
                     case S_MAYBE:
                         break;
                     case S_EMACS:
+                        presskey = 0;
                         s->alt = A_EMACS;
                         break;
                 }
