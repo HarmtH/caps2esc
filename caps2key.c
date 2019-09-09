@@ -21,115 +21,117 @@ let @c='g=ap€kr=g=ap€kr.g=ap€kr*='
 */
 
 const struct input_event
-a_up             = {.type = EV_KEY, .code = KEY_A,         .value = 0},
-a_down           = {.type = EV_KEY, .code = KEY_A,         .value = 1},
-a_repeat         = {.type = EV_KEY, .code = KEY_A,         .value = 2},
-b_up             = {.type = EV_KEY, .code = KEY_B,         .value = 0},
-b_down           = {.type = EV_KEY, .code = KEY_B,         .value = 1},
-b_repeat         = {.type = EV_KEY, .code = KEY_B,         .value = 2},
-c_up             = {.type = EV_KEY, .code = KEY_C,         .value = 0},
-c_down           = {.type = EV_KEY, .code = KEY_C,         .value = 1},
-c_repeat         = {.type = EV_KEY, .code = KEY_C,         .value = 2},
-d_up             = {.type = EV_KEY, .code = KEY_D,         .value = 0},
-d_down           = {.type = EV_KEY, .code = KEY_D,         .value = 1},
-d_repeat         = {.type = EV_KEY, .code = KEY_D,         .value = 2},
-e_up             = {.type = EV_KEY, .code = KEY_E,         .value = 0},
-e_down           = {.type = EV_KEY, .code = KEY_E,         .value = 1},
-e_repeat         = {.type = EV_KEY, .code = KEY_E,         .value = 2},
-f_up             = {.type = EV_KEY, .code = KEY_F,         .value = 0},
-f_down           = {.type = EV_KEY, .code = KEY_F,         .value = 1},
-f_repeat         = {.type = EV_KEY, .code = KEY_F,         .value = 2},
-h_up             = {.type = EV_KEY, .code = KEY_H,         .value = 0},
-h_down           = {.type = EV_KEY, .code = KEY_H,         .value = 1},
-h_repeat         = {.type = EV_KEY, .code = KEY_H,         .value = 2},
-i_up             = {.type = EV_KEY, .code = KEY_I,         .value = 0},
-i_down           = {.type = EV_KEY, .code = KEY_I,         .value = 1},
-i_repeat         = {.type = EV_KEY, .code = KEY_I,         .value = 2},
-j_up             = {.type = EV_KEY, .code = KEY_J,         .value = 0},
-j_down           = {.type = EV_KEY, .code = KEY_J,         .value = 1},
-j_repeat         = {.type = EV_KEY, .code = KEY_J,         .value = 2},
-k_up             = {.type = EV_KEY, .code = KEY_K,         .value = 0},
-k_down           = {.type = EV_KEY, .code = KEY_K,         .value = 1},
-k_repeat         = {.type = EV_KEY, .code = KEY_K,         .value = 2},
-l_up             = {.type = EV_KEY, .code = KEY_L,         .value = 0},
-l_down           = {.type = EV_KEY, .code = KEY_L,         .value = 1},
-l_repeat         = {.type = EV_KEY, .code = KEY_L,         .value = 2},
-m_up             = {.type = EV_KEY, .code = KEY_M,         .value = 0},
-m_down           = {.type = EV_KEY, .code = KEY_M,         .value = 1},
-m_repeat         = {.type = EV_KEY, .code = KEY_M,         .value = 2},
-n_up             = {.type = EV_KEY, .code = KEY_N,         .value = 0},
-n_down           = {.type = EV_KEY, .code = KEY_N,         .value = 1},
-n_repeat         = {.type = EV_KEY, .code = KEY_N,         .value = 2},
-o_up             = {.type = EV_KEY, .code = KEY_O,         .value = 0},
-o_down           = {.type = EV_KEY, .code = KEY_O,         .value = 1},
-o_repeat         = {.type = EV_KEY, .code = KEY_O,         .value = 2},
-p_up             = {.type = EV_KEY, .code = KEY_P,         .value = 0},
-p_down           = {.type = EV_KEY, .code = KEY_P,         .value = 1},
-p_repeat         = {.type = EV_KEY, .code = KEY_P,         .value = 2},
-u_up             = {.type = EV_KEY, .code = KEY_U,         .value = 0},
-u_down           = {.type = EV_KEY, .code = KEY_U,         .value = 1},
-u_repeat         = {.type = EV_KEY, .code = KEY_U,         .value = 2},
-v_up             = {.type = EV_KEY, .code = KEY_V,         .value = 0},
-v_down           = {.type = EV_KEY, .code = KEY_V,         .value = 1},
-v_repeat         = {.type = EV_KEY, .code = KEY_V,         .value = 2},
-w_up             = {.type = EV_KEY, .code = KEY_W,         .value = 0},
-w_down           = {.type = EV_KEY, .code = KEY_W,         .value = 1},
-w_repeat         = {.type = EV_KEY, .code = KEY_W,         .value = 2},
-y_up             = {.type = EV_KEY, .code = KEY_Y,         .value = 0},
-y_down           = {.type = EV_KEY, .code = KEY_Y,         .value = 1},
-y_repeat         = {.type = EV_KEY, .code = KEY_Y,         .value = 2},
-z_up             = {.type = EV_KEY, .code = KEY_Z,         .value = 0},
-z_down           = {.type = EV_KEY, .code = KEY_Z,         .value = 1},
-z_repeat         = {.type = EV_KEY, .code = KEY_Z,         .value = 2},
-backspace_up     = {.type = EV_KEY, .code = KEY_BACKSPACE, .value = 0},
-backspace_down   = {.type = EV_KEY, .code = KEY_BACKSPACE, .value = 1},
-capslock_up      = {.type = EV_KEY, .code = KEY_CAPSLOCK,  .value = 0},
-capslock_down    = {.type = EV_KEY, .code = KEY_CAPSLOCK,  .value = 1},
-delete_up        = {.type = EV_KEY, .code = KEY_DELETE,    .value = 0},
-delete_down      = {.type = EV_KEY, .code = KEY_DELETE,    .value = 1},
-down_up          = {.type = EV_KEY, .code = KEY_DOWN,      .value = 0},
-down_down        = {.type = EV_KEY, .code = KEY_DOWN,      .value = 1},
-end_up           = {.type = EV_KEY, .code = KEY_END,       .value = 0},
-end_down         = {.type = EV_KEY, .code = KEY_END,       .value = 1},
-enter_up         = {.type = EV_KEY, .code = KEY_ENTER,     .value = 0},
-enter_down       = {.type = EV_KEY, .code = KEY_ENTER,     .value = 1},
-esc_up           = {.type = EV_KEY, .code = KEY_ESC,       .value = 0},
-esc_down         = {.type = EV_KEY, .code = KEY_ESC,       .value = 1},
-home_up          = {.type = EV_KEY, .code = KEY_HOME,      .value = 0},
-home_down        = {.type = EV_KEY, .code = KEY_HOME,      .value = 1},
-insert_up        = {.type = EV_KEY, .code = KEY_INSERT,    .value = 0},
-insert_down      = {.type = EV_KEY, .code = KEY_INSERT,    .value = 1},
-lalt_up          = {.type = EV_KEY, .code = KEY_LEFTALT,   .value = 0},
-lalt_down        = {.type = EV_KEY, .code = KEY_LEFTALT,   .value = 1},
-lalt_repeat      = {.type = EV_KEY, .code = KEY_LEFTALT,   .value = 2},
-lctrl_up         = {.type = EV_KEY, .code = KEY_LEFTCTRL,  .value = 0},
-lctrl_down       = {.type = EV_KEY, .code = KEY_LEFTCTRL,  .value = 1},
-left_up          = {.type = EV_KEY, .code = KEY_LEFT,      .value = 0},
-left_down        = {.type = EV_KEY, .code = KEY_LEFT,      .value = 1},
-lshift_up        = {.type = EV_KEY, .code = KEY_LEFTSHIFT, .value = 0},
-lshift_down      = {.type = EV_KEY, .code = KEY_LEFTSHIFT, .value = 1},
-pagedown_up      = {.type = EV_KEY, .code = KEY_PAGEDOWN,  .value = 0},
-pagedown_down    = {.type = EV_KEY, .code = KEY_PAGEDOWN,  .value = 1},
-pageup_up        = {.type = EV_KEY, .code = KEY_PAGEUP,    .value = 0},
-pageup_down      = {.type = EV_KEY, .code = KEY_PAGEUP,    .value = 1},
-ralt_up          = {.type = EV_KEY, .code = KEY_RIGHTALT,  .value = 0},
-ralt_down        = {.type = EV_KEY, .code = KEY_RIGHTALT,  .value = 1},
-rctrl_up         = {.type = EV_KEY, .code = KEY_RIGHTCTRL, .value = 0},
-rctrl_down       = {.type = EV_KEY, .code = KEY_RIGHTCTRL, .value = 1},
-right_up         = {.type = EV_KEY, .code = KEY_RIGHT,     .value = 0},
-right_down       = {.type = EV_KEY, .code = KEY_RIGHT,     .value = 1},
-semicolon_up     = {.type = EV_KEY, .code = KEY_SEMICOLON, .value = 0},
-semicolon_down   = {.type = EV_KEY, .code = KEY_SEMICOLON, .value = 1},
-semicolon_repeat = {.type = EV_KEY, .code = KEY_SEMICOLON, .value = 2},
-slash_up         = {.type = EV_KEY, .code = KEY_SLASH,     .value = 0},
-slash_down       = {.type = EV_KEY, .code = KEY_SLASH,     .value = 1},
-slash_repeat     = {.type = EV_KEY, .code = KEY_SLASH,     .value = 2},
-space_up         = {.type = EV_KEY, .code = KEY_SPACE,     .value = 0},
-space_down       = {.type = EV_KEY, .code = KEY_SPACE,     .value = 1},
-tab_up           = {.type = EV_KEY, .code = KEY_TAB,       .value = 0},
-tab_down         = {.type = EV_KEY, .code = KEY_TAB,       .value = 1},
-up_up            = {.type = EV_KEY, .code = KEY_UP,        .value = 0},
-up_down          = {.type = EV_KEY, .code = KEY_UP,        .value = 1};
+a_up             = {.type = EV_KEY, .code = KEY_A,          .value = 0},
+a_down           = {.type = EV_KEY, .code = KEY_A,          .value = 1},
+a_repeat         = {.type = EV_KEY, .code = KEY_A,          .value = 2},
+b_up             = {.type = EV_KEY, .code = KEY_B,          .value = 0},
+b_down           = {.type = EV_KEY, .code = KEY_B,          .value = 1},
+b_repeat         = {.type = EV_KEY, .code = KEY_B,          .value = 2},
+c_up             = {.type = EV_KEY, .code = KEY_C,          .value = 0},
+c_down           = {.type = EV_KEY, .code = KEY_C,          .value = 1},
+c_repeat         = {.type = EV_KEY, .code = KEY_C,          .value = 2},
+d_up             = {.type = EV_KEY, .code = KEY_D,          .value = 0},
+d_down           = {.type = EV_KEY, .code = KEY_D,          .value = 1},
+d_repeat         = {.type = EV_KEY, .code = KEY_D,          .value = 2},
+e_up             = {.type = EV_KEY, .code = KEY_E,          .value = 0},
+e_down           = {.type = EV_KEY, .code = KEY_E,          .value = 1},
+e_repeat         = {.type = EV_KEY, .code = KEY_E,          .value = 2},
+f_up             = {.type = EV_KEY, .code = KEY_F,          .value = 0},
+f_down           = {.type = EV_KEY, .code = KEY_F,          .value = 1},
+f_repeat         = {.type = EV_KEY, .code = KEY_F,          .value = 2},
+h_up             = {.type = EV_KEY, .code = KEY_H,          .value = 0},
+h_down           = {.type = EV_KEY, .code = KEY_H,          .value = 1},
+h_repeat         = {.type = EV_KEY, .code = KEY_H,          .value = 2},
+i_up             = {.type = EV_KEY, .code = KEY_I,          .value = 0},
+i_down           = {.type = EV_KEY, .code = KEY_I,          .value = 1},
+i_repeat         = {.type = EV_KEY, .code = KEY_I,          .value = 2},
+j_up             = {.type = EV_KEY, .code = KEY_J,          .value = 0},
+j_down           = {.type = EV_KEY, .code = KEY_J,          .value = 1},
+j_repeat         = {.type = EV_KEY, .code = KEY_J,          .value = 2},
+k_up             = {.type = EV_KEY, .code = KEY_K,          .value = 0},
+k_down           = {.type = EV_KEY, .code = KEY_K,          .value = 1},
+k_repeat         = {.type = EV_KEY, .code = KEY_K,          .value = 2},
+l_up             = {.type = EV_KEY, .code = KEY_L,          .value = 0},
+l_down           = {.type = EV_KEY, .code = KEY_L,          .value = 1},
+l_repeat         = {.type = EV_KEY, .code = KEY_L,          .value = 2},
+m_up             = {.type = EV_KEY, .code = KEY_M,          .value = 0},
+m_down           = {.type = EV_KEY, .code = KEY_M,          .value = 1},
+m_repeat         = {.type = EV_KEY, .code = KEY_M,          .value = 2},
+n_up             = {.type = EV_KEY, .code = KEY_N,          .value = 0},
+n_down           = {.type = EV_KEY, .code = KEY_N,          .value = 1},
+n_repeat         = {.type = EV_KEY, .code = KEY_N,          .value = 2},
+o_up             = {.type = EV_KEY, .code = KEY_O,          .value = 0},
+o_down           = {.type = EV_KEY, .code = KEY_O,          .value = 1},
+o_repeat         = {.type = EV_KEY, .code = KEY_O,          .value = 2},
+p_up             = {.type = EV_KEY, .code = KEY_P,          .value = 0},
+p_down           = {.type = EV_KEY, .code = KEY_P,          .value = 1},
+p_repeat         = {.type = EV_KEY, .code = KEY_P,          .value = 2},
+u_up             = {.type = EV_KEY, .code = KEY_U,          .value = 0},
+u_down           = {.type = EV_KEY, .code = KEY_U,          .value = 1},
+u_repeat         = {.type = EV_KEY, .code = KEY_U,          .value = 2},
+v_up             = {.type = EV_KEY, .code = KEY_V,          .value = 0},
+v_down           = {.type = EV_KEY, .code = KEY_V,          .value = 1},
+v_repeat         = {.type = EV_KEY, .code = KEY_V,          .value = 2},
+w_up             = {.type = EV_KEY, .code = KEY_W,          .value = 0},
+w_down           = {.type = EV_KEY, .code = KEY_W,          .value = 1},
+w_repeat         = {.type = EV_KEY, .code = KEY_W,          .value = 2},
+y_up             = {.type = EV_KEY, .code = KEY_Y,          .value = 0},
+y_down           = {.type = EV_KEY, .code = KEY_Y,          .value = 1},
+y_repeat         = {.type = EV_KEY, .code = KEY_Y,          .value = 2},
+z_up             = {.type = EV_KEY, .code = KEY_Z,          .value = 0},
+z_down           = {.type = EV_KEY, .code = KEY_Z,          .value = 1},
+z_repeat         = {.type = EV_KEY, .code = KEY_Z,          .value = 2},
+backspace_up     = {.type = EV_KEY, .code = KEY_BACKSPACE,  .value = 0},
+backspace_down   = {.type = EV_KEY, .code = KEY_BACKSPACE,  .value = 1},
+capslock_up      = {.type = EV_KEY, .code = KEY_CAPSLOCK,   .value = 0},
+capslock_down    = {.type = EV_KEY, .code = KEY_CAPSLOCK,   .value = 1},
+delete_up        = {.type = EV_KEY, .code = KEY_DELETE,     .value = 0},
+delete_down      = {.type = EV_KEY, .code = KEY_DELETE,     .value = 1},
+down_up          = {.type = EV_KEY, .code = KEY_DOWN,       .value = 0},
+down_down        = {.type = EV_KEY, .code = KEY_DOWN,       .value = 1},
+end_up           = {.type = EV_KEY, .code = KEY_END,        .value = 0},
+end_down         = {.type = EV_KEY, .code = KEY_END,        .value = 1},
+enter_up         = {.type = EV_KEY, .code = KEY_ENTER,      .value = 0},
+enter_down       = {.type = EV_KEY, .code = KEY_ENTER,      .value = 1},
+esc_up           = {.type = EV_KEY, .code = KEY_ESC,        .value = 0},
+esc_down         = {.type = EV_KEY, .code = KEY_ESC,        .value = 1},
+home_up          = {.type = EV_KEY, .code = KEY_HOME,       .value = 0},
+home_down        = {.type = EV_KEY, .code = KEY_HOME,       .value = 1},
+insert_up        = {.type = EV_KEY, .code = KEY_INSERT,     .value = 0},
+insert_down      = {.type = EV_KEY, .code = KEY_INSERT,     .value = 1},
+lalt_up          = {.type = EV_KEY, .code = KEY_LEFTALT,    .value = 0},
+lalt_down        = {.type = EV_KEY, .code = KEY_LEFTALT,    .value = 1},
+lalt_repeat      = {.type = EV_KEY, .code = KEY_LEFTALT,    .value = 2},
+lctrl_up         = {.type = EV_KEY, .code = KEY_LEFTCTRL,   .value = 0},
+lctrl_down       = {.type = EV_KEY, .code = KEY_LEFTCTRL,   .value = 1},
+left_up          = {.type = EV_KEY, .code = KEY_LEFT,       .value = 0},
+left_down        = {.type = EV_KEY, .code = KEY_LEFT,       .value = 1},
+lshift_up        = {.type = EV_KEY, .code = KEY_LEFTSHIFT,  .value = 0},
+lshift_down      = {.type = EV_KEY, .code = KEY_LEFTSHIFT,  .value = 1},
+rshift_up        = {.type = EV_KEY, .code = KEY_RIGHTSHIFT, .value = 0},
+rshift_down      = {.type = EV_KEY, .code = KEY_RIGHTSHIFT, .value = 1},
+pagedown_up      = {.type = EV_KEY, .code = KEY_PAGEDOWN,   .value = 0},
+pagedown_down    = {.type = EV_KEY, .code = KEY_PAGEDOWN,   .value = 1},
+pageup_up        = {.type = EV_KEY, .code = KEY_PAGEUP,     .value = 0},
+pageup_down      = {.type = EV_KEY, .code = KEY_PAGEUP,     .value = 1},
+ralt_up          = {.type = EV_KEY, .code = KEY_RIGHTALT,   .value = 0},
+ralt_down        = {.type = EV_KEY, .code = KEY_RIGHTALT,   .value = 1},
+rctrl_up         = {.type = EV_KEY, .code = KEY_RIGHTCTRL,  .value = 0},
+rctrl_down       = {.type = EV_KEY, .code = KEY_RIGHTCTRL,  .value = 1},
+right_up         = {.type = EV_KEY, .code = KEY_RIGHT,      .value = 0},
+right_down       = {.type = EV_KEY, .code = KEY_RIGHT,      .value = 1},
+semicolon_up     = {.type = EV_KEY, .code = KEY_SEMICOLON,  .value = 0},
+semicolon_down   = {.type = EV_KEY, .code = KEY_SEMICOLON,  .value = 1},
+semicolon_repeat = {.type = EV_KEY, .code = KEY_SEMICOLON,  .value = 2},
+slash_up         = {.type = EV_KEY, .code = KEY_SLASH,      .value = 0},
+slash_down       = {.type = EV_KEY, .code = KEY_SLASH,      .value = 1},
+slash_repeat     = {.type = EV_KEY, .code = KEY_SLASH,      .value = 2},
+space_up         = {.type = EV_KEY, .code = KEY_SPACE,      .value = 0},
+space_down       = {.type = EV_KEY, .code = KEY_SPACE,      .value = 1},
+tab_up           = {.type = EV_KEY, .code = KEY_TAB,        .value = 0},
+tab_down         = {.type = EV_KEY, .code = KEY_TAB,        .value = 1},
+up_up            = {.type = EV_KEY, .code = KEY_UP,         .value = 0},
+up_down          = {.type = EV_KEY, .code = KEY_UP,         .value = 1};
 // clang-format on
 
 int equal(const struct input_event *first, const struct input_event *second) {
@@ -138,7 +140,7 @@ int equal(const struct input_event *first, const struct input_event *second) {
 }
 
 struct state {
-    enum { A_WAIT, A_MAYBE, A_EMACS } alt;
+    enum { A_WAIT, A_EMACS } alt;
     enum { S_WAIT, S_MAYBE, S_EMACS } semicol;
     enum { C_WAIT, C_MAYBE, C_CTRL } caps;
     __u16 pressed[8];
@@ -174,8 +176,8 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
     }
 
     int k = 0;
-
     int presskey = 1;
+    int pressesc = 0;
 
     switch (s->caps) {
         case C_WAIT:
@@ -186,8 +188,7 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
             break;
         case C_MAYBE:
             if (equal(input, &capslock_up)) {
-                output[k++] = esc_down;
-                output[k++] = esc_up;
+                pressesc = 1;
                 presskey = 0;
                 s->caps = C_WAIT;
             } else if (input->value != 0) {
@@ -212,11 +213,11 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
             }
             break;
         case S_MAYBE:
-            if (equal(input, &semicolon_up) || equal(input, &space_down) || equal(input, &capslock_down)) {
+            if (equal(input, &semicolon_up) || equal(input, &space_down) || pressesc) {
                 output[k++] = semicolon_down;
                 dadd(s, semicolon_down.code);
                 s->semicol = S_WAIT;
-            } else if (input->value != 0) {
+            } else if (input->value != 0 && s->caps != C_MAYBE) {
                 s->semicol = S_EMACS;
             }
             break;
@@ -247,6 +248,11 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
                 s->alt = A_WAIT;
             }
             break;
+    }
+
+    if (pressesc) {
+        output[k++] = esc_down;
+        output[k++] = esc_up;
     }
 
     if (presskey) {
@@ -362,7 +368,7 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
             output[k++] = *input;
             /* printf("repeat pressing %d\n",input->code); */
         } else if (input->value == 1) {
-            if (!s->semicol) {
+            if (!s->semicol || equal(input, &lshift_down) || equal(input, &rshift_down) || equal(input, &lctrl_down) || equal(input, &rctrl_down)) {
                 output[k++] = *input;
                 dadd(s, input->code);
                 /* printf("pressing %d\n",input->code); */
