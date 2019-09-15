@@ -66,6 +66,9 @@ o_repeat         = {.type = EV_KEY, .code = KEY_O,          .value = 2},
 p_up             = {.type = EV_KEY, .code = KEY_P,          .value = 0},
 p_down           = {.type = EV_KEY, .code = KEY_P,          .value = 1},
 p_repeat         = {.type = EV_KEY, .code = KEY_P,          .value = 2},
+q_up             = {.type = EV_KEY, .code = KEY_Q,          .value = 0},
+q_down           = {.type = EV_KEY, .code = KEY_Q,          .value = 1},
+q_repeat         = {.type = EV_KEY, .code = KEY_Q,          .value = 2},
 u_up             = {.type = EV_KEY, .code = KEY_U,          .value = 0},
 u_down           = {.type = EV_KEY, .code = KEY_U,          .value = 1},
 u_repeat         = {.type = EV_KEY, .code = KEY_U,          .value = 2},
@@ -301,6 +304,9 @@ int eventmap(const struct input_event *input, struct input_event output[], struc
         } else if (s->semicol && (equal(input, &d_down) || equal(input, &d_repeat))) {
             output[k++] = delete_down;
             output[k++] = delete_up;
+        } else if (s->semicol && (equal(input, &q_down) || equal(input, &q_repeat))) {
+            output[k++] = esc_down;
+            output[k++] = esc_up;
         } else if (s->semicol && (equal(input, &e_down) || equal(input, &e_repeat))) {
             output[k++] = end_down;
             output[k++] = end_up;
